@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .box {
+            width: 300px;
+            color: aliceblue;
+            border: 5px solid rgb(121, 123, 124);
+            padding: 50px;
+            margin: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-image: url(logo.jpeg);
+            background-size: cover;
+                }
+        .uv {
+                background-color: rgb(252, 248, 7);
+                color: rgb(3, 3, 3);
+                }
+        .logo {
+                color: rgb(209, 127, 19);
+                font-size: x-large;
+
+        }
+        .h2 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: brown;
+
+        }
+    </style>
+</head>
+
+
+    <center>
+    
+    <h1 class="h2">Login Page</h1>
+       
+    <form id="loginform" class="box">
+        <legend style="font-size:x-large;"><mark><strong>Login</strong></mark></legend>
+            <br><Br>
+        <label><mark>Enter UserName</mark></label> &nbsp; &nbsp;
+        <input type="text" id="loginuname" placeholder="Enter Username" required>
+        <br><br>
+        <label><mark>Enter Password</mark></label> &nbsp; &nbsp; &nbsp;
+        <input type="password" id="loginpassword" placeholder="Enter Password" required>
+        <br><br><br><br><br><br><br><br>
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset"><br><br>
+        <a href="register.html" style="font-size: x-large;">Register</a>
+    </form>
+</center>
+
+    <script>
+        document.getElementById("loginform").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var entereduname = document.getElementById("loginuname").value;
+            var enteredpassword = document.getElementById("loginpassword").value;
+
+            var storeduname = localStorage.getItem("uname");
+            var storedpassword = localStorage.getItem("password");
+
+            if (entereduname === storeduname && enteredpassword === storedpassword) {
+                alert("Login Successfully")
+                window.location.href = "index.html"
+            }
+            else {
+                alert("login failed")
+            }
+        })
+    </script>
+</body>
+
+</html>

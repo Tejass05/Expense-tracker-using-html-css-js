@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        .box {
+            width: 300px;
+            color: aliceblue;
+            border: 5px solid rgb(121, 123, 124);
+            padding: 50px;
+            margin: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-image: url(logo.jpeg);
+            background-size: cover;
+                }
+        .uv {
+                background-color: rgb(252, 248, 7);
+                color: rgb(3, 3, 3);
+                }
+        .logo {
+                color: rgb(209, 127, 19);
+                font-size: x-large;
+
+        }
+        .h2 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: brown;
+
+        }
+    </style>
+</head>
+
+
+     <center>
+        
+    <h1 class="h2">Registration Page</h1>
+        
+
+    <form id="registerform" class="box">
+        <legend style="font-size: x-large; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            <mark><strong>Register</strong></mark><br><br><br><br>
+        </legend><br><br>
+        <label><mark>Create UserName</mark></label> &nbsp; &nbsp;
+        <input type="text" id="uname" placeholder="Create Username" required>
+        <br><br>
+        <label><mark>Enter New Password</mark></Enter></label> &nbsp; &nbsp; &nbsp;
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <br><br> <br><br> <br><br> <br><br>
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset"><br><br>
+        <a href="login.html">Login</a>
+    </form>
+
+</center>
+
+    <script>
+        document.getElementById("registerform").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var uname = document.getElementById("uname").value;
+            var password = document.getElementById("password").value;
+            localStorage.setItem("uname", uname);
+            localStorage.setItem("password", password);
+            window.location.href = "login.html"
+        })
+    </script>
+</body>
+
+</html>
